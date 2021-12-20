@@ -1,1 +1,228 @@
-<h1>Hi</h1>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+    </script>
+
+    <script>
+      function setupTypewriter(t) {
+      var HTML = t.innerHTML;
+
+      t.innerHTML = "";
+
+      var cursorPosition = 0,
+          tag = "",
+          writingTag = false,
+          tagOpen = false,
+          typeSpeed = 25,
+        tempTypeSpeed = 0;
+
+      var type = function() {
+
+          if (writingTag === true) {
+              tag += HTML[cursorPosition];
+          }
+
+          if (HTML[cursorPosition] === "<") {
+              tempTypeSpeed = 0;
+              if (tagOpen) {
+                  tagOpen = false;
+                  writingTag = true;
+              } else {
+                  tag = "";
+                  tagOpen = true;
+                  writingTag = true;
+                  tag += HTML[cursorPosition];
+              }
+          }
+          if (!writingTag && tagOpen) {
+              tag.innerHTML += HTML[cursorPosition];
+          }
+          if (!writingTag && !tagOpen) {
+              if (HTML[cursorPosition] === " ") {
+                  tempTypeSpeed = 0;
+              }
+              else {
+                  tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              }
+              t.innerHTML += HTML[cursorPosition];
+          }
+          if (writingTag === true && HTML[cursorPosition] === ">") {
+              tempTypeSpeed = (Math.random() * typeSpeed) + 50;
+              writingTag = false;
+              if (tagOpen) {
+                  var newSpan = document.createElement("span");
+                  t.appendChild(newSpan);
+                  newSpan.innerHTML = tag;
+                  tag = newSpan.firstChild;
+              }
+          }
+
+          cursorPosition += 1;
+          if (cursorPosition < HTML.length - 1) {
+              setTimeout(type, tempTypeSpeed);
+          }
+
+      };
+
+      return {
+          type: type
+      };
+  }
+  </script>
+
+  </head>
+
+  <body style="background-color:black">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <ul class="list-inline top_header">
+            <li><a class="jumboMenuText lead" href="#">Home</a></li>
+            <li><a class="jumboMenuText lead" href="#">About</a></li>
+            <li><a class="jumboMenuText lead" href="#">Blog</a></li>
+            <li><a class="jumboMenuText lead" href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-5 top_header" style="text-align:right">
+          <ul class="list-inline">
+            <li><a href="https://www.linkedin.com/in/vnata" target="_blank" class="fa fa-linkedin fa-2x" ></a></li>
+            <li><a href="https://github.com//vishvanata" target="_blank" class="fa fa-github fa-2x" target="_blank"></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="jumbotron jumboText row" style="background-color:#4169E1">
+          <h1 class="" style="color:white">Bioinformatician</h1>
+          <p class="lead jumboText">Hey! I'm Vishva. I'm a BS/MS Bioinformatics student.</p>
+          <p class="lead jumboText"></p>
+      </div>
+
+      <div class="row">
+        <!-- first column -->
+        <div class="col-sm-7">
+ <pre id="typewriter">
+ <span class="var-highlight">var</span> object = {
+  name: <span class="string-highlight">'Vishva'</span>,
+  school: <span class="string-highlight">'Georgia Tech'</span>,
+  class: <span class="string-highlight">'2023'</span>,
+  major: <span class="string-highlight">'Biology'</span>,
+  minor: <span class="string-highlight">'CS: Intelligence'</span>,
+  interests:[<span class="string-highlight">'bioinformatics'</span>,
+             <span class="string-highlight">'machine learning'</span>,
+             <span class="string-highlight">'cloud computing'</span>,
+             <span class="string-highlight">'journalism'</span>];
+ };
+</pre>
+          <script type="text/javascript">
+          var typer = document.getElementById('typewriter');
+          typewriter = setupTypewriter(typewriter);
+          typewriter.type();
+          </script>
+        </div>
+        <!-- second column -->
+        <div class="col-sm-5" style="color:#bfbfbf">
+          <h1 class="">
+            My portfolio website is where I showcase my latest work - research, side projects, publications.
+          </h1>
+          <h3 class="lead">
+            Scroll below to see my latest work. <br><br>
+            Work including research, independent study, and time.<br><br>
+            You're sure to be impressed.
+          </h3>
+          <br>
+        </div>
+      </div>
+
+      <div class="">
+        <h1 class="title lead">
+          About
+        </h1>
+      </div>
+
+
+      <!-- 3 column gallery of pictures -->
+      <div class="row">
+        <!-- first column -->
+        <div class="col-sm-4">
+          <div class="thumbnail">
+              <a href="Headshort.jpg"></a>
+                <img class="myimage" src="Headshort.jpg" alt="Headshot" width="204" height="136">
+              <div class="caption">
+                <p class= "body_text_color">
+                  I'm a Biology major and combined BS/MS Bioinformatics student
+                  at the Georgia Institute of Technology. My interests include bioinformatics,
+                  machine learning, and cloud computing.
+                </p>
+            </div>
+          </div>
+        </div>
+        <!-- second column -->
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <a href="GeorgiaTech.jpg"></a>
+              <img class="myimage" src="GeorgiaTech.jpg" alt="GeorgiaTech" width="204" height="136">
+              <div class="caption">
+                <p class= "body_text_color">
+                  I'm a Biology major and combined BS/MS Bioinformatics student
+                  at the Georgia Institute of Technology. My interests include bioinformatics,
+                  machine learning, and cloud computing.
+                </p>
+              </div>
+          </div>
+        </div>
+        <!-- third column -->
+        <div class="col-sm-4">
+          <div class="thumbnail">
+            <a href="buzlab.jpg"></a>
+              <img class="myimage" src="buzlab.jpg" alt="BuzzLab" width="204" height="136">
+              <div class="caption">
+                <p class= "body_text_color">
+                  I'm a Biology major and combined BS/MS Bioinformatics student
+                  at the Georgia Institute of Technology. My interests include bioinformatics,
+                  machine learning, and cloud computing.
+                </p>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <h1 class="title lead">
+          Portfolio
+        </h1>
+      </div>
+
+    </div>
+  <!-- FOOTER BELOW, OUTSIDE MAIN DIV-->
+
+
+  <footer class="text-center">
+    <a href="#" data-toggle="tooltip" title="Hooray!">
+      <span onclick="topFunction()" class="glyphicon glyphicon-chevron-up"></span>
+    </a><br><br>
+    <kbd>Made by Vishva</kbd>
+  </footer>
+
+
+
+
+
+  </body>
+
+</html>
